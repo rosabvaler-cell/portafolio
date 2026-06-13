@@ -1,4 +1,0 @@
-// Centralized WhatsApp link so every CTA points to the same destination.
-export const WHATSAPP_URL = "https://wa.link/15uscj";
-
-export const buildWhatsAppUrl = (_message?: string) => WHATSAPP_URL;
