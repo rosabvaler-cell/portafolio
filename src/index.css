@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial palette — Perla, Azulino, Rojo */
+    --background: 0 0% 96%;          /* #F6F6F6 perla */
+    --foreground: 220 38% 17%;       /* #1B263C azulino */
+
+    --card: 0 0% 96%;
+    --card-foreground: 220 38% 17%;
+
+    --popover: 0 0% 96%;
+    --popover-foreground: 220 38% 17%;
+
+    --primary: 220 38% 17%;          /* azulino */
+    --primary-foreground: 0 0% 96%;
+
+    --secondary: 1 99% 30%;          /* #980501 rojo */
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 220 20% 35%;
+
+    --accent: 1 99% 30%;             /* rojo accent */
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 1 99% 30%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 1 99% 30%;
+
+    --radius: 0.25rem;
+
+    /* Editorial extras */
+    --espresso: 220 38% 17%;         /* azulino */
+    --coffee: 1 99% 30%;             /* rojo */
+    --cream: 0 0% 96%;               /* perla */
+    --cream-deep: 0 0% 92%;
+
+    --shadow-soft: 0 20px 60px -20px hsl(220 38% 17% / 0.18);
+    --shadow-card: 0 10px 40px -15px hsl(220 38% 17% / 0.12);
+    --transition-elegant: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Bebas Neue', system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .font-serif {
+    font-family: 'Bebas Neue', system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .font-sans {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 0;
+  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1s var(--transition-elegant), transform 1s var(--transition-elegant);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 120ms; }
+  .reveal-delay-2 { transition-delay: 280ms; }
+  .reveal-delay-3 { transition-delay: 440ms; }
+
+  .editorial-rule {
+    @apply inline-block h-px w-12 bg-secondary align-middle;
+  }
+}
